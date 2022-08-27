@@ -3,19 +3,17 @@ sugoku dasai botan
 */
 import { css } from "@emotion/css"
 import { FC, ReactNode, useRef } from "react"
-import { useButton } from 'react-aria'
-
+import { AriaButtonProps, useButton } from 'react-aria'
 
 type Props = {
     children: ReactNode
-    clickHandler: () => void
-}
+} & AriaButtonProps
 
-export const Button: FC<Props> = ({ children, clickHandler, ...props }) => {
+export const Button: FC<Props> = ({ children, ...props }) => {
     const ref = useRef<HTMLButtonElement>(null)
     const { buttonProps } = useButton(props, ref)
     return (
-        <button className={styles.button} ref={ref} onClick={clickHandler} {...buttonProps}>
+        <button className={styles.button} ref={ref} {...buttonProps}>
             <div className={styles.inner}>
                 {children}
             </div>

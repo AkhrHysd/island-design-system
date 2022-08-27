@@ -8,4 +8,4 @@ export default {
     component: Button,
 } as ComponentMeta<typeof Button>
 
-export const Primary: ComponentStory<typeof Button> = () => <Button>Button</Button>;
+export const Primary: ComponentStory<typeof Button> = () => <Button onPress={() => alert('sugoku dasai botan')}>Button</Button>;
