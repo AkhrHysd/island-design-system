@@ -18,6 +18,7 @@ export const Accordion: FC<Props> = ({title, children, elementExist = false}) =>
             <button
                 type="button"
                 aria-expoand={isAccordionOpen}
+                aria-owns={`accordion-section-${title}`}
                 id={`accordion-${title}`}
                 onClick={toggleAccordion}
             >
